@@ -8,8 +8,8 @@ OBJ_DIR = objs
 LIBFT_DIR = lib/libft
 LIBFT_A = $(LIBFT_DIR)/libft.a
 
-SRCS = push_swap.c ft_arg_checker.c ft_list_create.c ft_ops_center.c \
-	   ft_3_stack.c ft_3_utils.c ft_instructions.c
+SRCS = push_swap.c ft_arg_checker.c ft_list_create.c ft_ops_stack.c \
+	   ft_3_stack.c ft_3_utils.c ft_instructions.c ft_clean.c
 OBJS = $(patsubst %.c, $(OBJ_DIR)/%.o, $(SRCS))
 
 vpath %.c $(SRC_DIR)
