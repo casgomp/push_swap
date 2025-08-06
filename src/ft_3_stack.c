@@ -6,7 +6,7 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 10:53:02 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/05 11:37:11 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/06 10:56:28 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/push_swap.h"
@@ -25,11 +25,9 @@ int	ft_3stack(t_list **head, int size)
 				return (1);
 			else
 			{
-				ra(head);
-				ft_3_update_cont(*head, arr_cont);
 				sa(head); 
 				ft_3_update_cont(*head, arr_cont);
-				rra(head);
+				ra(head);
 				ft_3_update_cont(*head, arr_cont);
 				return (1);
 			}
