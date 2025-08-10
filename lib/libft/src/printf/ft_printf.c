@@ -49,7 +49,7 @@ static void	ft_convert(char converter, va_list *ap, int *count_chars)
 		flag = ft_putnbr_base_prnt_address(va_arg(*ap, unsigned int), 
 				count_chars, "0123456789abcdef");
 	else if (converter == 'X')
-		flag = ft_putnbr_base_prnt_address(va_arg(*ap, unsigned int), 
+		flag = ft_putnbr_base_prnt_address(va_arg(*ap, unsigned int),
 				count_chars, "0123456789ABCDEF");
 	else
 		flag = 0;

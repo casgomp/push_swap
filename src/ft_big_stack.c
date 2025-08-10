@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_big_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 11:53:20 by pecastro          #+#    #+#             */
-/*   Updated: 2025/07/24 11:53:23 by pecastro         ###   ########.fr       */
+/*   Created: 2025/08/06 12:23:35 by pecastro          #+#    #+#             */
+/*   Updated: 2025/08/07 11:20:50 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "../include/push_swap.h"
 
-# include "ft_ctype.h"
-# include "ft_string.h"
-# include "ft_memory.h"
-# include "ft_alloc.h"
-# include "ft_fd.h"
-# include "ft_fd.h"
-# include "ft_function.h"
-# include "ft_linked_list.h"
-# include "ft_printf.h"
-# include "ft_dprintf.h"
-# include "ft_get_next_line.h"
+void	ft_big_stack(t_list **head, int size)
+{
+	//size is passed so i can calculate median already, create index, assign half.
+	t_list	*stackB;
+	int		median;
 
-#endif
+	median = size;
+	stackB = NULL;
+	pa(head, &stackB);
+	pa(head, &stackB);
+}

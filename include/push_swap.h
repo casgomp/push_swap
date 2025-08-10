@@ -6,7 +6,7 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 17:23:47 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/04 13:56:30 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/09 17:32:27 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef PUSH_SWAP_H
@@ -14,6 +14,8 @@
 
 # include <stdlib.h>
 # include "../lib/libft/include/libft.h"
+
+# define STDERR_FILENO 2
 
 //push_swap
 int		main(int argc, char **argv);
@@ -29,17 +31,24 @@ t_list	*ft_list_create(int *arr, int size);
 int		ft_ops_stack(int *arr_int, int size);
 int		ft_is_sorted(t_list *head);
 //ft_3_stack
-int		ft_3stack(t_list **head, int size);
+void	ft_3stack(t_list **head, int size);
 void	ft_3_update_cont(t_list *head, int *arr_cont);
 //ft_3_utils
 int		ft_3_first_smallest(int cont1, int cont2, int cont3);
 int		ft_3_first_largest(int cont1, int cont2, int cont3);
 int		ft_3_third_smallest(int cont1, int cont2, int cont3);
 int		ft_3_islarger(int cont1, int cont2);
+//ft_big_stack
+void	ft_big_stack(t_list **head, int size);
 //ft_instructions
 void	sa(t_list **list);
 void	ra(t_list **list);
 void	rra(t_list **list);
+//ft_instructions2
+void	ss(t_list **listA, t_list **listB);
+void	rr(t_list **listA, t_list **listB);
+void	rrr(t_list **listA, t_list **listB);
+void	pa(t_list **list_from, t_list **list_to);
 //ft_clean
 void	ft_clean_list(t_list **head);
 void	del(void *content);

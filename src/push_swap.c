@@ -6,7 +6,7 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 10:55:23 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/05 11:12:13 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/09 17:19:29 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/push_swap.h"
@@ -58,7 +58,7 @@ int	ft_manager(int size, char **arr)
 
 	if (!ft_arg_checker(size, arr))
 	{
-		ft_printf("Error\n");
+		ft_dprintf(STDERR_FILENO, "Error\n");
 		return (0);
 	}
 	arr_int = ft_arr_atoi(size, arr);
@@ -120,7 +120,7 @@ int	*ft_arr_atoi(int size, char **arr)
 		arr_int[i] = ft_atoi_safe(arr[i], &error);
 		if (error)
 		{
-			ft_printf("Error\n");
+			ft_dprintf(STDERR_FILENO, "Error\n");
 			free (arr_int);
 			return (0);
 		}

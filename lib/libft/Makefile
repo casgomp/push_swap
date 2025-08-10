@@ -4,7 +4,7 @@ NAME = libft.a
 
 OBJ_DIR = objs
 SRC_DIR = src
-SUB_DIRS = ctype string memory alloc function fd linked_list printf gnl
+SUB_DIRS = ctype string memory alloc function fd linked_list printf dprintf gnl
 
 S_CTYPE			= ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
 				  ft_isprint.c ft_tolower.c ft_toupper.c
@@ -31,6 +31,9 @@ S_LINKED_LIST	= ft_lstnew.c ft_lstlast.c ft_lstmap.c ft_lstadd_front.c \
 S_PRINTF		= ft_printf.c ft_putchar_prnt.c ft_putstr_prnt.c \
 				  ft_putnbr_base_prnt.c ft_putnbr_base_prnt_address.c \
 				  ft_putnbr_base_prnt_address_pre.c
+				  
+S_DPRINTF		= ft_dprintf.c ft_putchar_dprintf.c ft_putstr_dprintf.c \
+				  ft_putnbr_dprintf.c ft_putnbr_base_unsigned_dprintf.c
 
 S_GNL			= ft_get_next_line.c ft_get_next_line_utils.c
 
@@ -42,10 +45,12 @@ O_FD			= $(patsubst %.c, $(OBJ_DIR)/%.o, $(S_FD))
 O_FUNCTION		= $(patsubst %.c, $(OBJ_DIR)/%.o, $(S_FUNCTION))
 O_LINKED_LIST	= $(patsubst %.c, $(OBJ_DIR)/%.o, $(S_LINKED_LIST))
 O_PRINTF		= $(patsubst %.c, $(OBJ_DIR)/%.o, $(S_PRINTF))
+O_DPRINTF		= $(patsubst %.c, $(OBJ_DIR)/%.o, $(S_DPRINTF))
 O_GNL			= $(patsubst %.c, $(OBJ_DIR)/%.o, $(S_GNL))
 
 OBJS =  $(O_CTYPE) $(O_STRING) $(O_MEMORY) $(O_ALLOC) $(O_FD) \
-		$(O_FUNCTION) $(O_LINKED_LIST) $(O_PRINTF) $(O_GNL)
+		$(O_FUNCTION) $(O_LINKED_LIST) $(O_PRINTF) $(O_DPRINTF) \
+		$(O_GNL)
 
 vpath %.c $(addprefix $(SRC_DIR)/, $(SUB_DIRS))
 

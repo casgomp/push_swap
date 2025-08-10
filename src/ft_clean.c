@@ -6,7 +6,7 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 10:44:58 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/05 10:53:43 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/07 13:37:07 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/push_swap.h"
@@ -43,4 +43,3 @@ void	ft_clean_arr_str(int pos, char **arr)
 	}
 	free (arr);
 }
-

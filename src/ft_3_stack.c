@@ -6,12 +6,12 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 10:53:02 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/06 10:56:28 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/07 11:16:05 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/push_swap.h"
 
-int	ft_3stack(t_list **head, int size)
+void	ft_3stack(t_list **head, int size) //this function should be void?
 {
 	int	arr_cont[size];
 
@@ -22,14 +22,14 @@ int	ft_3stack(t_list **head, int size)
 		if (ft_3_first_smallest(arr_cont[0], arr_cont[1], arr_cont[2]))
 		{
 			if (ft_3_islarger(arr_cont[2], arr_cont[1])) //ops_center has ifsorted so this if not necessary.
-				return (1);
+				return ;
 			else
 			{
 				sa(head); 
 				ft_3_update_cont(*head, arr_cont);
 				ra(head);
 				ft_3_update_cont(*head, arr_cont);
-				return (1);
+				return ;
 			}
 		}
 		if (ft_3_first_largest(arr_cont[0], arr_cont[1], arr_cont[2]))
@@ -48,21 +48,20 @@ int	ft_3stack(t_list **head, int size)
 		sa(head);
 	}
 	ft_3_update_cont(*head, arr_cont);
-	//starts debugging loops .............................................get rid
+/*	//starts debugging loops .............................................get rid
 	int i = 0;
 	while (i < size)
 	{
 		//ft_printf("updated arr_cont[%i] = %i\n", i, arr_cont[i]);
 		i ++;
 	}
-	t_list *current = *head; 
+	t_list *current = *head;
 	while (current)
 	{
 		//ft_printf("updated list: current->content = %i\n", *(int *)current->content);
 		current = current->next;
 	}
 	//ends debugging loops ...............................................get rid/*/
-	return (1);
 }
 
 void	ft_3_update_cont(t_list *head, int *arr_cont)

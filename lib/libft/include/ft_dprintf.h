@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_dprintf.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 11:53:20 by pecastro          #+#    #+#             */
-/*   Updated: 2025/07/24 11:53:23 by pecastro         ###   ########.fr       */
+/*   Created: 2025/07/24 11:53:01 by pecastro          #+#    #+#             */
+/*   Updated: 2025/08/09 16:17:59 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef FT_DPRINTF_H
+# define FT_DPRINTF_H
 
-# include "ft_ctype.h"
-# include "ft_string.h"
-# include "ft_memory.h"
-# include "ft_alloc.h"
-# include "ft_fd.h"
-# include "ft_fd.h"
-# include "ft_function.h"
-# include "ft_linked_list.h"
-# include "ft_printf.h"
-# include "ft_dprintf.h"
-# include "ft_get_next_line.h"
+# include <stdarg.h>
+# include <stdio.h>
+# include <stdint.h>
+# include <stdlib.h>
+# include <unistd.h>
+
+int	ft_dprintf(int fd, const char *format, ...);
+int	ft_putchar_dprintf(char c, int fd);
+int	ft_putstr_dprintf(char *s, int fd);
+int	ft_putnbr_dprintf(int nb, int fd);
+int	ft_putnbr_base_unsigned_dprintf(unsigned long long nb, char converter, int fd);
 
 #endif
