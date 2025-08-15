@@ -6,7 +6,7 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 11:52:51 by pecastro          #+#    #+#             */
-/*   Updated: 2025/07/24 11:52:54 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/15 13:57:28 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FT_LINKED_LIST_H
@@ -18,6 +18,17 @@ typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
+	int				index;
+	int				half;
+	int				up;
+	int				down;
+	int				tot_d;
+	int				tot_u;
+	int				updown;
+	int				tot_ud;
+	int				cost;
+	int				matchB;
+	int				flag;
 }t_list;
 
 t_list	*ft_lstnew(void *content);
