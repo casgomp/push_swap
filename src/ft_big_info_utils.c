@@ -6,13 +6,14 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 16:54:29 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/15 19:12:29 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/16 11:25:06 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/push_swap.h"
 
 void	ft_A_min_in_B(t_list *currentA, t_list *currentB, t_stack *t_Ainfo, t_stack *t_Binfo)
-{	
+{
+	ft_printf("ft_A_min_in_B: currentA index=%i, content=%i\n", currentA->index, *(int *)currentA->content);
 	while (currentB && (*(int *)currentB->content != t_Binfo->max_val))
 		currentB = currentB->next;
 	ft_cost_flag(currentA, currentB);
@@ -44,7 +45,7 @@ void	ft_matchB(t_list *currentA, t_list *currentB, t_stack *t_Ainfo)
 
 void	ft_info_winner(t_list *currentA, t_stack *t_Ainfo)
 {	
-	t_Ainfo->cost_win = currentA->cost;
+	t_Ainfo->cost_win = currentA->cost + 1;
 	t_Ainfo->Awin = currentA->index;
 	t_Ainfo->Bwin = currentA->matchB;
 	t_Ainfo->flag = currentA->flag;

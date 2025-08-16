@@ -6,13 +6,14 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 17:23:47 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/15 19:03:54 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/16 12:43:41 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
 # include <stdlib.h>
+# include <stdio.h>
 # include "../lib/libft/include/libft.h"
 
 # define STDERR_FILENO 2
@@ -23,6 +24,10 @@ typedef struct s_stack
 	double	median;
 	int		min_val;
 	int		max_val;
+	int		min_index;
+	int		max_index;
+	int		min_content;
+	int		max_content;
 	int		min_dif;
 	int		Awin; //index of A winner
 	int		Bwin; //index of B winner

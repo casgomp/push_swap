@@ -6,7 +6,7 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 12:50:16 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/15 19:09:04 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/16 12:44:34 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/push_swap.h"
@@ -28,14 +28,23 @@ void	ft_stack_info(t_list *head, t_stack *stack_info)
 	while (head)
 	{
 		if (*(int *)head->content < stack_info->min_val)
+		{
 			stack_info->min_val = *(int *)head->content;
+			stack_info->min_index = head->index;
+			stack_info->min_content = *(int *)head->content;
+		}
 		if (*(int *)head->content > stack_info->max_val)
+		{
 			stack_info->max_val = *(int *)head->content;
+			stack_info->max_index = head->index;
+			stack_info->max_content = *(int *)head->content;
+		}
 		head = head->next;
 		stack_info->size ++;
 	}
 	if (stack_info->size > 1)
 		stack_info->median = stack_info->size / 2.0 + 0.5;
+	//printf("ft_stack_info: median = size(%i) / 2.0 + 0.5 =%.1f\n", stack_info->size, stack_info->median);
 }
 
 void	ft_node_info(t_list *head, t_stack *stack_info)

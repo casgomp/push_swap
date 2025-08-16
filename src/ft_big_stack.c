@@ -6,7 +6,7 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 12:23:35 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/15 19:02:27 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/16 11:27:39 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/push_swap.h"
@@ -19,7 +19,29 @@ void	ft_big_stack(t_list **headA)
 
 	headB = NULL;
 	ft_update_info(*headA, headB, &t_Ainfo, &t_Binfo);
-	ft_printf("ft_big_stack: update info: t_Binfo.size = %i\n", t_Binfo.size);
+	
+	//debugging loop:............................................................................debugging loop
+	t_list *current = *headA;
+	int i = 0;
+	while (current)
+	{
+		ft_printf("before, list_from,index[%i] = %i\n", i, *(int *)current->content);
+		i ++;
+		current = current->next;
+	}
+	current = headB;
+	i = 0;
+	while (current)
+	{
+		ft_printf("before, list_to,index[%i] = %i\n", i, *(int *)current->content);
+		i ++;
+		current = current->next;
+	}
+	//debugging loop:............................................................................debugging loop
+
+
+	printf("ft_big_stack:first_update: Amedian=%.1f, Bmedian=%.1f\n", t_Ainfo.median, t_Binfo.median);
+	ft_printf("ft_big_stack: first update: Bsize=%i Asize=%i\n", t_Ainfo.size, t_Binfo.size);
 	if (t_Ainfo.size <= 5)//this small loop is for only input of size <= 5.
 	{
 		while (t_Ainfo.size > 3)
@@ -33,6 +55,8 @@ void	ft_big_stack(t_list **headA)
 		while (t_Ainfo.size > 3)
 		{
 			ft_cost_info(*headA, headB, &t_Ainfo, &t_Binfo);//calculate which A to push to B.
+			ft_printf("ft_big_stack: flag=%i, cost_win=%i, Awin=%i, Bwin=%i\n", t_Ainfo.flag, t_Ainfo.cost_win, t_Ainfo.Awin, t_Ainfo.Bwin);
+			printf("ft_big_stack: Asize=%i, Bsize=%i, Amedian=%.1f, Bmedian=%.1f\n", t_Ainfo.size, t_Binfo.size, t_Ainfo.median, t_Binfo.median);
 			ft_big_rotator(headA, &headB, &t_Ainfo, &t_Binfo); //rotate A and B based on flag
  			ft_push_update(headA, &headB, &t_Ainfo, &t_Binfo); //push A to B and update
 		}
@@ -43,6 +67,7 @@ void	ft_big_stack(t_list **headA)
 
 void	ft_big_rotator(t_list **headA, t_list **headB, t_stack *t_Ainfo, t_stack *t_Binfo)
 {
+	ft_printf("ft_big_rotator: flag=%i\n", t_Ainfo->flag);
 	if (t_Ainfo->flag == 1)
 		ft_big_rotator_flag1(headA, headB, t_Ainfo);
 	else if (t_Ainfo->flag == 2)
