@@ -6,7 +6,7 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 10:53:02 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/13 13:40:06 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/17 17:06:40 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/push_swap.h"
@@ -48,7 +48,7 @@ void	ft_3stack(t_list **head, int size) //this function should be void?
 		sa(head);
 	}
 	ft_3_update_cont(*head, arr_cont);//some update_cont in this function are superfluous(or are they?).
-	//starts debugging loops .............................................get rid
+/*	//starts debugging loops .............................................get rid
 	int i = 0;
 	while (i < size)
 	{
@@ -62,7 +62,7 @@ void	ft_3stack(t_list **head, int size) //this function should be void?
 		current = current->next;
 	}
 	//ends debugging loops ...............................................get rid/*/
-	ft_printf("ft_3_stack: finished sorting\n");
+	//ft_printf("ft_3_stack: finished sorting\n");
 }
 
 void	ft_3_update_cont(t_list *head, int *arr_cont)

@@ -28,6 +28,8 @@ typedef struct s_list
 	int				tot_ud;
 	int				cost;
 	int				matchB;
+	int				Bup_match;
+	int				Bdown_match;
 	int				flag;
 }t_list;
 

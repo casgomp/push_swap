@@ -6,62 +6,46 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 10:57:47 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/16 12:49:31 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/18 10:25:39 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/push_swap.h" 
 
 void	ft_Asize_is_3(t_list **headA, t_list **headB, t_stack *t_Ainfo, t_stack *t_Binfo)
 {
-	ft_printf("ft_Asize_is_3\n");
+	//ft_printf("ft_Asize_is_3\n");
 	t_list *currentA;
 	int	result;
-	//int	arr_cont[t_Ainfo->size];
-	//int	arr_result[t_Ainfo->size];
-	//int	i;
 	
 	if(!ft_is_sorted(*headA))
 	{
-		ft_printf("ft_Asize_is_3: call to ft_3stack\n");
+		//ft_printf("ft_Asize_is_3: call to ft_3stack\n");
 		ft_3stack(headA, t_Ainfo->size);
 	}
 	if (t_Binfo->size == 2)
 	{
-		ft_printf("ft_Asize_is_3: t_B size=%i\n", t_Binfo->size);
+		//ft_printf("ft_Asize_is_3: t_B size=%i\n", t_Binfo->size);
 		if (ft_is_sorted(*headB))
-			sa(headB);
+			sb(headB);//sa(headB);
 	}
 	ft_update_info(*headA, *headB, t_Ainfo, t_Binfo);
 	while (*headB) //loop in another function?
 	{
-		//ft_3_update_cont(*headA, arr_cont);
 		ft_update_info(*headA, *headB, t_Ainfo, t_Binfo);
 		t_Ainfo->min_dif = INT_MAX;
 		currentA = *headA;
 		while(currentA)
 		{
 			result = *(int *)currentA->content - *(int *)(*headB)->content;
-			ft_printf("ft_Asize_is_3: result = %i - %i\n", *(int *)currentA->content, *(int*)(*headB)->content);
+			//ft_printf("ft_Asize_is_3: result = %i - %i\n", *(int *)currentA->content, *(int*)(*headB)->content);
 			if (result > 0 && result < t_Ainfo->min_dif)
 			{
 				t_Ainfo->min_dif = result;
 				t_Ainfo->Awin = currentA->index;
-				ft_printf("ft_Asize_is_3: A min_dif=%i\n", t_Ainfo->min_dif);
+				//ft_printf("ft_Asize_is_3: A min_dif=%i\n", t_Ainfo->min_dif);
 			}
 			currentA = currentA->next;
 		}
-		/*i = 0;
-		while (i < t_Ainfo->size)
-		{
-			arr_result[i] = arr_cont[i] - *(int *)(*headB)->content;
-			ft_printf("ft_Asize_is_3: arr_result[%i] = %i - %i\n", i, arr_cont[i], *(int*)(*headB)->content);
-			if (arr_result[i] > 0 && arr_result[i] < t_Ainfo->min_dif)
-			{
-				t_Ainfo->min_dif = arr_result[i];
-				ft_printf("ft_Asize_is_3: A min_dif=%i\n", t_Ainfo->min_dif);
-			}
-			i ++;
-		}*/
 		if (t_Ainfo->min_dif < INT_MAX)
 			ft_Asize_is_3_rotator(headA, headB, t_Ainfo, t_Binfo);
 		else
@@ -77,7 +61,7 @@ void	ft_Asize_is_3(t_list **headA, t_list **headB, t_stack *t_Ainfo, t_stack *t_
 					rra(headA);
 			}
 		}
-		pa(headB, headA);
+		pa(headB, headA);//pa(headB, headA);
 	}
 	ft_update_info(*headA, *headB, t_Ainfo, t_Binfo);
 	//if min_val not at index 1, then rotate until it is. (maybe could use
@@ -88,7 +72,7 @@ void	ft_Asize_is_3(t_list **headA, t_list **headB, t_stack *t_Ainfo, t_stack *t_
 		while (*(int *)(*headA)->content != t_Ainfo->min_val)
 			rra(headA);
 	}
-	//debugging loop:............................................................................debugging loop
+/*	//debugging loop:............................................................................debugging loop
 	t_list *current = *headA;
 	int i = 0;
 	while (current)
@@ -106,7 +90,7 @@ void	ft_Asize_is_3_rotator(t_list **headA, t_list **headB, t_stack *t_Ainfo, t_s
 		{
 			while (*headB && ((*(int *)(*headA)->content - *(int *)(*headB)->content) != t_Ainfo->min_dif))
 			{
-				ft_printf("ft_Asize_is_3_rotator: ra comes from here\n");
+				//ft_printf("ft_Asize_is_3_rotator: ra comes from here\n");
 				ra(headA);
 				ft_update_info(*headA, *headB, t_Ainfo, t_Binfo);
 			}
@@ -115,8 +99,8 @@ void	ft_Asize_is_3_rotator(t_list **headA, t_list **headB, t_stack *t_Ainfo, t_s
 		{
 			while ((*headB && (*(int *)(*headA)->content - *(int *)(*headB)->content) != t_Ainfo->min_dif))
 			{
-				ft_printf("ft_Asize_is_3_rotator: rra comes from here\n");
-				ft_printf("ft_Asize_is_3_rotator: A min_dif=%i\n", t_Ainfo->min_dif);
+				//ft_printf("ft_Asize_is_3_rotator: rra comes from here\n");
+				//ft_printf("ft_Asize_is_3_rotator: A min_dif=%i\n", t_Ainfo->min_dif);
 				rra(headA);
 				ft_update_info(*headA, *headB, t_Ainfo, t_Binfo);
 			}

@@ -6,7 +6,7 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 17:23:47 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/16 12:43:41 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/18 09:33:02 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef PUSH_SWAP_H
@@ -67,6 +67,7 @@ void	ft_big_rotator_flag1(t_list **headA, t_list **headB, t_stack *t_Ainfo);
 void	ft_big_rotator_flag2(t_list **headA, t_list **headB, t_stack *t_Ainfo);
 void	ft_big_rotator_flag3(t_list **headA, t_list **headB, t_stack *t_Ainfo, t_stack *t_Binfo);
 void	ft_push_update(t_list **headA, t_list **headB, t_stack *t_Ainfo, t_stack *t_Binfo);
+void	ft_rotate_find(t_list **headB, t_stack t_Binfo);
 //ft_big_info
 void	ft_update_info(t_list *headA, t_list *headB, t_stack *t_Ainfo, t_stack *t_Binfo);
 void	ft_stack_info(t_list *head, t_stack *stack_info);
@@ -74,7 +75,7 @@ void	ft_node_info(t_list *head, t_stack *stack_info);
 void	ft_cost_info(t_list *headA, t_list *headB, t_stack *t_Ainfo, t_stack *t_Binfo);
 //ft_big__info_utils
 void	ft_A_min_in_B(t_list *currentA, t_list *currentB, t_stack *t_Ainfo, t_stack *t_Binfo);
-void	ft_A_other_in_B(t_list *currentA, t_list *currentB, t_stack *t_Ainfo);
+void	ft_A_other_in_B(t_list *currentA, t_list *currentB, t_stack *t_Ainfo, t_stack *t_Binfo);
 void	ft_matchB(t_list *currentA, t_list *currentB, t_stack *t_Ainfo);
 void	ft_info_winner(t_list *currentA, t_stack *t_Ainfo);
 void	ft_cost_flag(t_list *currentA, t_list *currentB);
@@ -85,13 +86,21 @@ void	ft_Asize_is_3(t_list **headA, t_list **headB, t_stack *t_Ainfo, t_stack *t_
 void	ft_Asize_is_3_rotator(t_list **headA, t_list **headB, t_stack *t_Ainfo, t_stack *t_Binfo);
 //ft_instructions
 void	sa(t_list **list);
+void	sb(t_list **list);
 void	ra(t_list **list);
+void	rb(t_list **list);
 void	rra(t_list **list);
+void	rrb(t_list **list);
 //ft_instructions2
 void	ss(t_list **listA, t_list **listB);
 void	rr(t_list **listA, t_list **listB);
 void	rrr(t_list **listA, t_list **listB);
 void	pa(t_list **list_from, t_list **list_to);
+void	pb(t_list **list_from, t_list **list_to);
+//ft_instructions3
+void	swap(t_list **list);
+void	rotate(t_list **list);
+void	reverse_rotate(t_list **list);
 //ft_clean
 void	ft_clean_list(t_list **head);
 void	del(void *content);
