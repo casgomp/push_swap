@@ -6,7 +6,7 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 17:23:47 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/18 09:33:02 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/19 10:49:57 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef PUSH_SWAP_H
@@ -44,6 +44,7 @@ int		main(int argc, char **argv);
 char	**ft_arr_str(int size, char **argv);
 int		ft_manager(int size, char **arr);
 int		*ft_arr_atoi(int size, char **arr);
+int		ft_count_words(char **arr);
 //ft_arg_checker
 int		ft_arg_checker(int size, char **arr);
 int		ft_isntdup(int size, char **arr);
@@ -54,6 +55,7 @@ int		ft_ops_stack(int *arr_int, int size);
 int		ft_is_sorted(t_list *head);
 //ft_3_stack
 void	ft_3stack(t_list **head, int size);
+void	ft_3_ops_and_update(t_list **head, int *arr_cont, void (*f)(t_list **));
 void	ft_3_update_cont(t_list *head, int *arr_cont);
 //ft_3_utils
 int		ft_3_first_smallest(int cont1, int cont2, int cont3);
@@ -66,38 +68,47 @@ void	ft_big_rotator(t_list **headA, t_list **headB, t_stack *t_Ainfo, t_stack *t
 void	ft_big_rotator_flag1(t_list **headA, t_list **headB, t_stack *t_Ainfo);
 void	ft_big_rotator_flag2(t_list **headA, t_list **headB, t_stack *t_Ainfo);
 void	ft_big_rotator_flag3(t_list **headA, t_list **headB, t_stack *t_Ainfo, t_stack *t_Binfo);
+//ft_big_stack_utils
+void	ft_big_stack_bigger(t_list **headA, t_list **headB, t_stack *t_Ainfo, t_stack *t_Binfo);
+void	ft_big_rotator_op1(int val, t_list **head, void (*f)(t_list**));
+void	ft_big_rotator_op2(int val, t_list **headA, t_list **headB, void (*f)(t_list**, t_list**));
 void	ft_push_update(t_list **headA, t_list **headB, t_stack *t_Ainfo, t_stack *t_Binfo);
 void	ft_rotate_find(t_list **headB, t_stack t_Binfo);
 //ft_big_info
 void	ft_update_info(t_list *headA, t_list *headB, t_stack *t_Ainfo, t_stack *t_Binfo);
 void	ft_stack_info(t_list *head, t_stack *stack_info);
+void	ft_stack_info_loop(t_list *head, t_stack *stack_info);
 void	ft_node_info(t_list *head, t_stack *stack_info);
 void	ft_cost_info(t_list *headA, t_list *headB, t_stack *t_Ainfo, t_stack *t_Binfo);
 //ft_big__info_utils
-void	ft_A_min_in_B(t_list *currentA, t_list *currentB, t_stack *t_Ainfo, t_stack *t_Binfo);
-void	ft_A_other_in_B(t_list *currentA, t_list *currentB, t_stack *t_Ainfo, t_stack *t_Binfo);
-void	ft_matchB(t_list *currentA, t_list *currentB, t_stack *t_Ainfo);
+void	ft_A_min_in_B(t_list *currentA, t_list *currentB, t_stack *t_Binfo);
+void	ft_A_other_in_B(t_list *currentA, t_list *currentB);
+void	ft_matchB(t_list *currentA, t_list *currentB);
 void	ft_info_winner(t_list *currentA, t_stack *t_Ainfo);
 void	ft_cost_flag(t_list *currentA, t_list *currentB);
+//ft_big_info_utils2
 int		ft_eq_larger(int n1, int n2);
 void	ft_choice(t_list *currentA);
 //ft_Asize_is_3
 void	ft_Asize_is_3(t_list **headA, t_list **headB, t_stack *t_Ainfo, t_stack *t_Binfo);
+void	ft_Asize_is_3_Awin(t_list *headA, t_list *headB, t_stack *t_Ainfo);
+void	ft_Asize_is_3_Blarger(t_list **headA, t_stack *t_Ainfo);
 void	ft_Asize_is_3_rotator(t_list **headA, t_list **headB, t_stack *t_Ainfo, t_stack *t_Binfo);
 //ft_instructions
 void	sa(t_list **list);
 void	sb(t_list **list);
+//ft_instructions2
 void	ra(t_list **list);
 void	rb(t_list **list);
 void	rra(t_list **list);
 void	rrb(t_list **list);
-//ft_instructions2
+//ft_instructions3
 void	ss(t_list **listA, t_list **listB);
 void	rr(t_list **listA, t_list **listB);
 void	rrr(t_list **listA, t_list **listB);
 void	pa(t_list **list_from, t_list **list_to);
 void	pb(t_list **list_from, t_list **list_to);
-//ft_instructions3
+//ft_instructions4
 void	swap(t_list **list);
 void	rotate(t_list **list);
 void	reverse_rotate(t_list **list);

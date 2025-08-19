@@ -6,7 +6,7 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 15:56:46 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/13 10:42:51 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/18 13:14:37 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/push_swap.h"
@@ -48,6 +48,5 @@ int	ft_is_sorted(t_list *head)
 	}
 	if (flag == 1)
 		return (0);
-	//ft_printf("list is sorted\n"); //get rid of this debugging statement before submitting
 	return (1);
 }

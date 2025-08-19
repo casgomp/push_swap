@@ -6,7 +6,7 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 10:55:23 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/09 17:19:29 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/18 11:08:30 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/push_swap.h"
@@ -15,8 +15,6 @@ int	main(int argc, char **argv)
 {
 	char	**arr;
 	int		size;
-	int		words;
-	int		i;
 
 	if (argc < 2 || argc > 501)
 		return (-1);
@@ -35,20 +33,9 @@ int	main(int argc, char **argv)
 		if (!arr)
 			return (-1);
 	}
-	// here is little loop to count words
-	words = 0;
-	i = 0;
-	while (arr[i])
-	{
-		words ++;
-		i ++;
-	}
-	if (!ft_manager(words, arr))
-	{
-		ft_clean_arr_str(words, arr);
-		return (-1);
-	}
-	ft_clean_arr_str(words, arr);
+	if (!ft_manager(ft_count_words(arr), arr))
+		return (ft_clean_arr_str(ft_count_words(arr), arr), -1);
+	ft_clean_arr_str(ft_count_words(arr), arr);
 	return (0);
 }
 
@@ -88,10 +75,7 @@ char	**ft_arr_str(int size, char **argv)
 	{
 		arr[i] = malloc(sizeof(char) * (ft_strlen(argv[i]) + 1));
 		if (!arr[i])
-		{
-			ft_clean_arr_str(i, arr);
-			return (NULL);	
-		}
+			return (ft_clean_arr_str(i, arr), NULL);	
 		j = 0;
 		while (argv[i][j])
 		{
@@ -127,4 +111,19 @@ int	*ft_arr_atoi(int size, char **arr)
 		i ++;
 	}
 	return (arr_int);
+}
+
+int	ft_count_words(char **arr)
+{
+	int	words;
+	int	i;
+
+	words = 0;
+	i = 0;
+	while (arr[i])
+	{
+		words ++;
+		i ++;
+	}
+	return (words);
 }

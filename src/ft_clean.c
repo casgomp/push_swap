@@ -6,22 +6,13 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 10:44:58 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/07 13:37:07 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/18 12:57:13 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/push_swap.h"
 
 void	ft_clean_list(t_list **head)
 {
-/*	//starts debugging loops .............................................get rid
-	ft_printf("made it to ft_clean_list\n");
-	t_list *current = *head; 
-	while (current)
-	{
-		ft_printf("ft_clean_list: current->content = %i\n", *(int *)current->content);
-		current = current->next;
-	}
-	//ends debugging loops ...............................................get rid/*/
 	ft_lstclear(head, &del);
 }
 

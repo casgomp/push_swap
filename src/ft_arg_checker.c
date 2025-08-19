@@ -6,7 +6,7 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 11:03:34 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/05 11:40:25 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/18 11:07:36 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/push_swap.h"
@@ -25,26 +25,17 @@ int	ft_arg_checker(int size, char **arr)
 		while (arr[i][j])
 		{
 			if (!ft_isdigit(arr[i][j]) && arr[i][j] != ' ' && arr[i][j] != '-')
-			{
-				//ft_printf("error comes from argchecker isdigit\n");
 				return (0);
-			}
 			if (arr[i][j] == '-')
 				sign_count ++;
 			if (sign_count > 1)
-			{
-				//ft_printf("error comes from argchecker signcount\n");
 				return (0);
-			}
 			j ++;
 		}
 		i ++;
 	}
 	if (ft_isntdup(size, arr))
-	{
-		//ft_printf("error comes from argchecker isntdup\n");
 		return (0);
-	}
 	return (1);
 }
 

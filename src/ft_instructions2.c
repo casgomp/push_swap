@@ -5,89 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/06 12:55:59 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/18 10:29:38 by pecastro         ###   ########.fr       */
+/*   Created: 2025/08/18 13:07:41 by pecastro          #+#    #+#             */
+/*   Updated: 2025/08/18 13:09:18 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/push_swap.h"
 
-void	ss(t_list **listA, t_list **listB)
+void	ra(t_list **list)
 {
-	swap(listA);
-	swap(listB);
-	ft_printf("ss\n");
+	rotate(list);
+	ft_printf("ra\n");
 }
 
-void	rr(t_list **listA, t_list **listB)
+void	rb(t_list **list)
 {
-	rotate(listA);
-	rotate(listB);
-	ft_printf("rr\n");
+	rotate(list);
+	ft_printf("rb\n");
 }
 
-void	rrr(t_list **listA, t_list **listB)
+void	rra(t_list **list)
 {
-	reverse_rotate(listA);
-	reverse_rotate(listB);
-	ft_printf("rrr\n");
+	reverse_rotate(list);
+	ft_printf("rra\n");
 }
 
-void	pa(t_list **list_from, t_list **list_to)
+void	rrb(t_list **list)
 {
-	t_list	*first;
-
-	first = *list_from;
-	*list_from = first->next;
-	first->next = *list_to;
-	*list_to = first;
-	ft_printf("pa\n");
-
-/*	//debugging loop:............................................................................debugging loop
-	t_list *current = *list_from;
-	int i = 0;
-	while (current)
-	{
-		ft_printf("after, list_from,index[%i] = %i\n", i, *(int *)current->content);
-		i ++;
-		current = current->next;
-	}
-	current = *list_to;
-	i = 0;
-	while (current)
-	{
-		ft_printf("after, list_to,index[%i] = %i\n", i, *(int *)current->content);
-		i ++;
-		current = current->next;
-	}
-	//debugging loop:............................................................................debugging loop/*/
-}
-
-void	pb(t_list **list_from, t_list **list_to)
-{
-	t_list	*first;
-
-	first = *list_from;
-	*list_from = first->next;
-	first->next = *list_to;
-	*list_to = first;
-	ft_printf("pb\n");
-
-/*	//debugging loop:............................................................................debugging loop
-	t_list *current = *list_from;
-	int i = 0;
-	while (current)
-	{
-		ft_printf("after, list_from,index[%i] = %i\n", i, *(int *)current->content);
-		i ++;
-		current = current->next;
-	}
-	current = *list_to;
-	i = 0;
-	while (current)
-	{
-		ft_printf("after, list_to,index[%i] = %i\n", i, *(int *)current->content);
-		i ++;
-		current = current->next;
-	}
-	//debugging loop:............................................................................debugging loop/*/
+	reverse_rotate(list);
+	ft_printf("rrb\n");
 }

@@ -15,12 +15,15 @@ SRCS = push_swap.c \
 	   ft_3_stack.c \
 	   ft_3_utils.c \
 	   ft_big_stack.c \
+	   ft_big_stack_utils.c \
 	   ft_big_info.c \
 	   ft_big_info_utils.c \
+	   ft_big_info_utils2.c \
 	   ft_Asize_is_3.c \
 	   ft_instructions.c \
 	   ft_instructions2.c \
 	   ft_instructions3.c \
+	   ft_instructions4.c \
 	   ft_clean.c
 
 OBJS = $(patsubst %.c, $(OBJ_DIR)/%.o, $(SRCS))

@@ -5,49 +5,51 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/16 16:16:55 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/16 16:18:08 by pecastro         ###   ########.fr       */
+/*   Created: 2025/08/06 12:55:59 by pecastro          #+#    #+#             */
+/*   Updated: 2025/08/18 13:08:06 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/push_swap.h"
 
-void	swap(t_list **list)
+void	ss(t_list **listA, t_list **listB)
 {
-	t_list	*first;
-	t_list	*second;
-
-	first = *list;
-	second = first->next;
-	first->next = second->next;
-	second->next = first;
-	*list = second;
+	swap(listA);
+	swap(listB);
+	ft_printf("ss\n");
 }
 
-void	rotate(t_list **list)
+void	rr(t_list **listA, t_list **listB)
 {
-	t_list	*first;
-	t_list	*last;
-
-	first = *list;
-	last = ft_lstlast(*list);
-	*list = first->next;
-	last->next = first;
-	first->next = NULL;
+	rotate(listA);
+	rotate(listB);
+	ft_printf("rr\n");
 }
 
-void	reverse_rotate(t_list **list)
+void	rrr(t_list **listA, t_list **listB)
 {
-	t_list	*first;
-	t_list	*last;
-	t_list	*last_new;
-
-	first = *list;
-	last = ft_lstlast(*list);
-	last_new = *list;
-	while (last_new && (last_new->next)->next)
-		last_new = last_new->next;
-	last->next = first;
-	last_new->next = NULL;
-	*list = last;
+	reverse_rotate(listA);
+	reverse_rotate(listB);
+	ft_printf("rrr\n");
 }
 
+void	pa(t_list **list_from, t_list **list_to)
+{
+	t_list	*first;
+
+	first = *list_from;
+	*list_from = first->next;
+	first->next = *list_to;
+	*list_to = first;
+	ft_printf("pa\n");
+}
+
+void	pb(t_list **list_from, t_list **list_to)
+{
+	t_list	*first;
+
+	first = *list_from;
+	*list_from = first->next;
+	first->next = *list_to;
+	*list_to = first;
+	ft_printf("pb\n");
+}
