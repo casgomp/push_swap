@@ -6,7 +6,7 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 12:04:17 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/09 16:19:40 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/19 11:19:11 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_dprintf.h"
@@ -15,7 +15,8 @@
 static int	ft_dprintf_rec(unsigned long long nb, char *base, int fd);
 static int	ft_p(uintptr_t nb, int fd);
 
-int	ft_putnbr_base_unsigned_dprintf(unsigned long long nb, char converter, int fd)
+int	ft_putnbr_base_unsigned_dprintf(unsigned long long nb, 
+		char converter, int fd)
 {
 	char	*base;
 	int		count_chars;

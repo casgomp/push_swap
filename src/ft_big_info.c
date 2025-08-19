@@ -6,17 +6,18 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 12:50:16 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/19 09:57:14 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/19 12:23:50 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/push_swap.h"
 
-void	ft_update_info(t_list *headA, t_list *headB, t_stack *t_Ainfo, t_stack *t_Binfo)
+void	ft_update_info(t_list *heada, t_list *headb, 
+			t_stack *t_ainfo, t_stack *t_binfo)
 {
-	ft_stack_info(headA, t_Ainfo);
-	ft_stack_info(headB, t_Binfo);
-	ft_node_info(headA, t_Ainfo);
-	ft_node_info(headB, t_Binfo);
+	ft_stack_info(heada, t_ainfo);
+	ft_stack_info(headb, t_binfo);
+	ft_node_info(heada, t_ainfo);
+	ft_node_info(headb, t_binfo);
 }
 
 void	ft_stack_info(t_list *head, t_stack *stack_info)
@@ -33,7 +34,7 @@ void	ft_stack_info(t_list *head, t_stack *stack_info)
 void	ft_stack_info_loop(t_list *head, t_stack *stack_info)
 {
 	int	position;
-	
+
 	position = 1;
 	while (head)
 	{
@@ -80,22 +81,23 @@ void	ft_node_info(t_list *head, t_stack *stack_info)
 	}
 }
 
-void	ft_cost_info(t_list *headA, t_list *headB, t_stack *t_Ainfo, t_stack *t_Binfo)
+void	ft_cost_info(t_list *heada, t_list *headb, 
+			t_stack *t_ainfo, t_stack *t_binfo)
 {
-	t_list	*currentA;
-	t_list	*currentB;
+	t_list	*currenta;
+	t_list	*currentb;
 
-	t_Ainfo->cost_win = INT_MAX;
-	currentA = headA;
-	while (currentA)
+	t_ainfo->cost_win = INT_MAX;
+	currenta = heada;
+	while (currenta)
 	{
-		currentB = headB;
-		if (*(int *)currentA->content < t_Binfo->min_val)
-			ft_A_min_in_B(currentA, headB, t_Binfo);	
+		currentb = headb;
+		if (*(int *)currenta->content < t_binfo->min_val)
+			ft_a_min_in_b(currenta, headb, t_binfo);
 		else
-			ft_A_other_in_B(currentA, headB);
-		if (currentA->cost < t_Ainfo->cost_win)
-			ft_info_winner(currentA, t_Ainfo);
-		currentA = currentA->next;
+			ft_a_other_in_b(currenta, headb);
+		if (currenta->cost < t_ainfo->cost_win)
+			ft_info_winner(currenta, t_ainfo);
+		currenta = currenta->next;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 10:55:23 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/18 11:08:30 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/19 11:43:24 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/push_swap.h"
@@ -75,7 +75,7 @@ char	**ft_arr_str(int size, char **argv)
 	{
 		arr[i] = malloc(sizeof(char) * (ft_strlen(argv[i]) + 1));
 		if (!arr[i])
-			return (ft_clean_arr_str(i, arr), NULL);	
+			return (ft_clean_arr_str(i, arr), NULL);
 		j = 0;
 		while (argv[i][j])
 		{

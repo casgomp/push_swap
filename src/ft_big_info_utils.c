@@ -6,76 +6,75 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 16:54:29 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/19 10:49:08 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/19 12:25:10 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/push_swap.h"
 
-void	ft_A_min_in_B(t_list *currentA, t_list *headB, t_stack *t_Binfo)
+void	ft_a_min_in_b(t_list *currenta, t_list *headb, t_stack *t_binfo)
 {
-	t_list	*currentB;
+	t_list	*currentb;
 
-	currentB = headB;
-	while (currentB && (*(int *)currentB->content != t_Binfo->max_val))
-		currentB = currentB->next;
-	ft_cost_flag(currentA, currentB);
-	ft_matchB(currentA, currentB);
+	currentb = headb;
+	while (currentb && (*(int *)currentb->content != t_binfo->max_val))
+		currentb = currentb->next;
+	ft_cost_flag(currenta, currentb);
+	ft_matchb(currenta, currentb);
 }
 
-void	ft_A_other_in_B(t_list *currentA, t_list *headB)
+void	ft_a_other_in_b(t_list *currenta, t_list *headb)
 {
-	t_list	*currentB;
-	t_list	*targetB;
+	t_list	*currentb;
+	t_list	*targetb;
 	int		target_val;
 	int		dif;
 	int		b_val;
 
-	currentB = headB;
-	targetB = NULL;
-	target_val = *(int *)currentA->content;
+	currentb = headb;
+	targetb = NULL;
+	target_val = *(int *)currenta->content;
 	dif = INT_MAX;
-	while (currentB)
+	while (currentb)
 	{
-		b_val = *(int *)currentB->content;
+		b_val = *(int *)currentb->content;
 		if (b_val < target_val)
 		{
 			if (target_val - b_val < dif)
 			{
 				dif = target_val - b_val;
-				targetB = currentB;
+				targetb = currentb;
 			}
 		}
-		currentB = currentB->next;
+		currentb = currentb->next;
 	}
-	ft_cost_flag(currentA, targetB);
-	ft_matchB(currentA, targetB);
+	ft_cost_flag(currenta, targetb);
+	ft_matchb(currenta, targetb);
 }
 
-void	ft_matchB(t_list *currentA, t_list *currentB)
+void	ft_matchb(t_list *currenta, t_list *currentb)
 {
-	currentA->matchB = currentB->index;
-	currentA->matchB = currentB->index;
-	currentA->Bup_match = currentB->up;
-	currentA->Bdown_match = currentB->down;
+	currenta->matchb = currentb->index;
+	currenta->matchb = currentb->index;
+	currenta->bup_match = currentb->up;
+	currenta->bdown_match = currentb->down;
 }
 
-void	ft_info_winner(t_list *currentA, t_stack *t_Ainfo)
-{	
-	t_Ainfo->cost_win = currentA->cost;
-	t_Ainfo->Awin = currentA->index;
-	t_Ainfo->Bwin = currentA->matchB;
-	t_Ainfo->flag = currentA->flag;
-	//
-	t_Ainfo->Aup = currentA->up;
-	t_Ainfo->Adown = currentA->down;
-	t_Ainfo->Bup = currentA->Bup_match;
-	t_Ainfo->Bdown = currentA->Bdown_match;
-}
-
-void	ft_cost_flag(t_list *currentA, t_list *currentB)
+void	ft_info_winner(t_list *currenta, t_stack *t_ainfo)
 {
-	currentA->tot_u = ft_eq_larger(currentA->up, currentB->up);
-	currentA->tot_d = ft_eq_larger(currentA->down, currentB->down);
-	currentA->tot_ud = currentA->updown + currentB->updown;
-	ft_choice(currentA);
+	t_ainfo->cost_win = currenta->cost;
+	t_ainfo->awin = currenta->index;
+	t_ainfo->bwin = currenta->matchb;
+	t_ainfo->flag = currenta->flag;
+	t_ainfo->aup = currenta->up;
+	t_ainfo->adown = currenta->down;
+	t_ainfo->bup = currenta->bup_match;
+	t_ainfo->bdown = currenta->bdown_match;
+}
+
+void	ft_cost_flag(t_list *currenta, t_list *currentb)
+{
+	currenta->tot_u = ft_eq_larger(currenta->up, currentb->up);
+	currenta->tot_d = ft_eq_larger(currenta->down, currentb->down);
+	currenta->tot_ud = currenta->updown + currentb->updown;
+	ft_choice(currenta);
 }

@@ -19,7 +19,7 @@ SRCS = push_swap.c \
 	   ft_big_info.c \
 	   ft_big_info_utils.c \
 	   ft_big_info_utils2.c \
-	   ft_Asize_is_3.c \
+	   ft_asize_is_3.c \
 	   ft_instructions.c \
 	   ft_instructions2.c \
 	   ft_instructions3.c \

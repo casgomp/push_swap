@@ -6,7 +6,7 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 15:56:46 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/18 13:14:37 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/19 11:49:28 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/push_swap.h"
@@ -42,7 +42,7 @@ int	ft_is_sorted(t_list *head)
 		if (*(int *)current->content < max_val)
 		{
 			flag = 1;
-			break;
+			break ;
 		}
 		current = current->next;
 	}

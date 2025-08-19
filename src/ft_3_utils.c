@@ -6,7 +6,7 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 12:59:40 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/02 10:13:22 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/19 12:00:11 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/push_swap.h"
@@ -28,7 +28,7 @@ int	ft_3_first_largest(int cont1, int cont2, int cont3)
 int	ft_3_third_smallest(int cont1, int cont2, int cont3)
 {
 	if (cont3 < cont2 && cont3 < cont1)
-		return(1);
+		return (1);
 	return (0);
 }
 

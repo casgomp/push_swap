@@ -6,14 +6,14 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 10:53:02 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/18 12:27:45 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/19 11:48:51 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/push_swap.h"
 
 void	ft_3stack(t_list **head, int size)
 {
-	int	arr_cont[size];
+	int	arr_cont[3];
 
 	ft_3_update_cont(*head, arr_cont);
 	if (size == 3)
