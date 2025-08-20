@@ -6,7 +6,7 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 15:56:46 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/19 11:49:28 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/20 10:32:55 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/push_swap.h"
@@ -17,7 +17,10 @@ int	ft_ops_stack(int *arr_int, int size)
 
 	head = ft_list_create(arr_int, size);
 	if (ft_is_sorted(head) || size <= 1)
+	{
+		ft_clean_list(&head);
 		return (0);
+	}
 	if (size <= 3)
 		ft_3stack(&head, size);
 	else if (size <= 500)
