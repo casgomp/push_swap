@@ -33,9 +33,9 @@ Key things learned from this project:
 
 The first challenge for this project was deciding which sorting algorithm to use. I read a few online articles, 
 including [this one](https://www.geeksforgeeks.org/dsa/sorting-algorithms/), which classifies algorithms into comparison-based and non comparison-based types.
-The latter type seemed compelling given the project requirements. However, those same requirements make this project unique in the sense that Big O is not per se 
+The latter type (especially the Radix Sort) seemed compelling given the project requirements. However, those same requirements make this project unique in the sense that Big O is not per se 
 a useful measure of efficiency. Shortly after, I learned about the Mechanical Turk
-which I decided to use because of its guaranteed effectiveness. The algoritm's logic can be found in 
+which I decided to use because of its guaranteed effectiveness for sorting under these particular constraints. The algoritm's logic can be found in 
 [this article](https://medium.com/@ayogun/push-swap-c1f5d2d41e97) written by its creator. The concept is quite simple: First push (i.e., move) members of 
 stack A into stack B in descending order until only 3 remain in stack A. Then push them back to stack A in ascending order. 
 In order to achieve this, for each member of stack A calculate the cost (i.e., the number of moves) to reach the top of the stack, 
