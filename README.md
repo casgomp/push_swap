@@ -44,7 +44,7 @@ After calculating the cost of each member in A, choose the one with the lowest c
 Then push A to B. To push B to A calculating the cost is no longer necessary. Its is only necesary to check which number is the closest higher than B. 
 A more detailed description can be found in the article.
 
-This implementation of the Mechanical Turk is able to,
+This implementation of the Mechanical Turk is able to:
   - Sort 3 random numbers in fewer than 3 operations
   - Sort 5 random numbers in less than 11 operations
   - Sort 100 random numbers in fewer than 700 operations.
