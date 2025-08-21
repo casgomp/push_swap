@@ -27,9 +27,10 @@ You have 2 stacks named a and b.
 
 Key things learned from this project:
 
-- Sorting algorithms
-- Improved understanding of linked lists
-- Organizing a somewhat complex project
+- Sorting algorithms.
+- Improved understanding of reusability and scalability in programming.
+- Improved understanding of linked lists.
+- Organizing a somewhat complex project.
 
 The first challenge for this project was deciding which sorting algorithm to use. I read a few online articles, 
 including [this one](https://www.geeksforgeeks.org/dsa/sorting-algorithms/), which classifies algorithms into comparison-based and non comparison-based types.
