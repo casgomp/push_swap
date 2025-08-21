@@ -6,7 +6,7 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 11:03:34 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/18 11:07:36 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/21 16:25:12 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/push_swap.h"
@@ -22,24 +22,21 @@ int	ft_arg_checker(int size, char **arr)
 	{
 		sign_count = 0;
 		j = 0;
+		if (arr[i][j] == '\0')
+			return (0);
 		while (arr[i][j])
 		{
-			if (!ft_isdigit(arr[i][j]) && arr[i][j] != ' ' && arr[i][j] != '-')
-				return (0);
-			if (arr[i][j] == '-')
-				sign_count ++;
-			if (sign_count > 1)
+			if (!ft_isdigit(arr[i][j]) && arr[i][j] != ' ' 
+					&& arr[i][j] != '-' && arr[i][j] != '+')
 				return (0);
 			j ++;
 		}
 		i ++;
 	}
-	if (ft_isntdup(size, arr))
-		return (0);
 	return (1);
 }
 
-int	ft_isntdup(int size, char **arr)
+int	ft_isntdup(int size, int *arr_int)
 {
 	int	i;
 	int	j;
@@ -50,7 +47,7 @@ int	ft_isntdup(int size, char **arr)
 		j = i + 1;
 		while (j < size)
 		{
-			if (!ft_strcmp(arr[i], arr[j]))
+			if (arr_int[i] == arr_int[j])
 				return (1);
 			j ++;
 		}

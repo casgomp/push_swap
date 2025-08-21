@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g -O0 -Iinclude -Ilib/libft/include
+#CFLAGS = -Wall -Wextra -Werror -g -O0 -Iinclude -Ilib/libft/include
 MAKEFLAGS += --no-print-directory
 NAME = push_swap
 

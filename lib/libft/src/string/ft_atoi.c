@@ -6,7 +6,7 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 12:01:19 by pecastro          #+#    #+#             */
-/*   Updated: 2025/07/24 12:01:23 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/21 14:49:21 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_string.h"
@@ -20,15 +20,11 @@ int	ft_atoi(const char *nptr)
 	sign = 1;
 	i = 0;
 	while (((nptr[i] >= '\t') && (nptr[i] <= '\r')) || (nptr[i] == ' '))
-	{
 		i++;
-	}
-	if (nptr[i] == '+' || nptr[i] == '-')
+	while (nptr[i] == '+' || nptr[i] == '-')
 	{
 		if (nptr[i] == '-')
-		{
 			sign = -sign;
-		}
 		i ++;
 	}
 	result = 0;

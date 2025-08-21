@@ -6,7 +6,7 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 10:55:23 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/19 11:43:24 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/21 16:21:09 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/push_swap.h"
@@ -16,13 +16,11 @@ int	main(int argc, char **argv)
 	char	**arr;
 	int		size;
 
-	if (argc < 2 || argc > 501)
+	if (argc < 2)
 		return (-1);
 	size = argc - 1;
 	if (size == 1)
 	{
-		if (argv[1][0] == '\0')
-			return (-1);
 		arr = ft_split(argv[1], ' ');
 		if (!arr)
 			return (-1);
@@ -51,6 +49,11 @@ int	ft_manager(int size, char **arr)
 	arr_int = ft_arr_atoi(size, arr);
 	if (!arr_int)
 		return (0);
+	if (ft_isntdup(size, arr_int))
+	{
+		ft_dprintf(STDERR_FILENO, "Error\n");
+		return (0);
+	}
 	if (!ft_ops_stack(arr_int, size))
 	{
 		free(arr_int);

@@ -6,7 +6,7 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 15:56:46 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/20 10:32:55 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/21 15:05:25 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/push_swap.h"
@@ -23,7 +23,7 @@ int	ft_ops_stack(int *arr_int, int size)
 	}
 	if (size <= 3)
 		ft_3stack(&head, size);
-	else if (size <= 500)
+	else
 		ft_big_stack(&head);
 	ft_clean_list(&head);
 	return (1);

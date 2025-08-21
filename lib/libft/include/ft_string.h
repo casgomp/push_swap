@@ -15,18 +15,19 @@
 # include <stddef.h>
 # include <limits.h>
 
-char	*ft_strchr(const char *s, int c);
-char	*ft_strrchr(const char *s, int c);
-char	*ft_strnstr(const char *big, const char *little, size_t len);
-int		ft_strcmp(const char *s1, const char *s2);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-int		ft_atoi(const char *nptr);
+char			*ft_strchr(const char *s, int c);
+char			*ft_strrchr(const char *s, int c);
+char			*ft_strnstr(const char *big, const char *little, size_t len);
+int				ft_strcmp(const char *s1, const char *s2);
+int				ft_strncmp(const char *s1, const char *s2, size_t n);
+int				ft_atoi(const char *nptr);
 //ft_atoi safe
-int		ft_atoi_safe(const char *nptr, int *error);
-long	ft_atoi_safe_digit(const char *nptr, int i, int *error, int sign);
+int				ft_atoi_safe(const char *nptr, int *error);
+unsigned int	ft_atoi_safe_digit(const char *nptr, 
+					int i, int *error, int sign);
 //
-size_t	ft_strlcat(char *dst, const char *src, size_t size);
-size_t	ft_strlcpy(char *dst, const char *src, size_t size);
-size_t	ft_strlen(const char *s);
+size_t			ft_strlcat(char *dst, const char *src, size_t size);
+size_t			ft_strlcpy(char *dst, const char *src, size_t size);
+size_t			ft_strlen(const char *s);
 
 #endif
