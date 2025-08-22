@@ -28,8 +28,8 @@ You have 2 stacks named a and b.
 Key things learned from this project:
 
 - Sorting algorithms.
-- Improved understanding of reusability and scalability in programming.
-- Improved understanding of linked lists.
+- Improved understanding of code reusability and scalability.
+- Improved understanding of (singly) linked lists.
 - Organizing a somewhat complex project.
 
 The first challenge for this project was deciding which sorting algorithm to use. I read a few online articles, 
