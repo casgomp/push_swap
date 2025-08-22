@@ -6,7 +6,7 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 10:55:23 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/21 16:21:09 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/22 10:08:39 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/push_swap.h"
@@ -49,8 +49,9 @@ int	ft_manager(int size, char **arr)
 	arr_int = ft_arr_atoi(size, arr);
 	if (!arr_int)
 		return (0);
-	if (ft_isntdup(size, arr_int))
+	if (ft_isdup(size, arr_int))
 	{
+		free(arr_int);
 		ft_dprintf(STDERR_FILENO, "Error\n");
 		return (0);
 	}

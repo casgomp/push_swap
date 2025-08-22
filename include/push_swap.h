@@ -6,7 +6,7 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 17:23:47 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/21 16:18:28 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/22 10:10:17 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef PUSH_SWAP_H
@@ -55,7 +55,7 @@ int		*ft_arr_atoi(int size, char **arr);
 int		ft_count_words(char **arr);
 //ft_arg_checker
 int		ft_arg_checker(int size, char **arr);
-int		ft_isntdup(int size, int *arr_int);
+int		ft_isdup(int size, int *arr_int);
 //ft_list_create
 t_list	*ft_list_create(int *arr, int size);
 //ft_ops_stack

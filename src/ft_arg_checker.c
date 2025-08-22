@@ -6,7 +6,7 @@
 /*   By: pecastro <pecastro@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 11:03:34 by pecastro          #+#    #+#             */
-/*   Updated: 2025/08/21 16:25:12 by pecastro         ###   ########.fr       */
+/*   Updated: 2025/08/22 10:08:30 by pecastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/push_swap.h"
@@ -36,7 +36,7 @@ int	ft_arg_checker(int size, char **arr)
 	return (1);
 }
 
-int	ft_isntdup(int size, int *arr_int)
+int	ft_isdup(int size, int *arr_int)
 {
 	int	i;
 	int	j;
