@@ -42,7 +42,7 @@ stack A into stack B in descending order until only 3 remain in stack A. Then pu
 In order to achieve this, for each member of stack A calculate the cost (i.e., the number of moves) to reach the top of the stack, 
 plus the cost of its match in B (i.e., the closest smaller element in B, or if A were to become the smallest number in B, then the largest number in B).
 After calculating the cost of each member in A, choose the one with the lowest cost, and move A and its match in B to the top using the available set of instructions. 
-Then push A to B. To push B to A calculating the cost is no longer necessary. Its is only necesary to check which number is the closest higher than B. 
+Then push A to B. To push B to A it is no longer necessary to calculate the cost. Its is only necessary to check which number is the closest higher than B.
 A more detailed description can be found in the article.
 
 This implementation of the Mechanical Turk is able to:
